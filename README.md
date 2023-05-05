@@ -1,1 +1,1 @@
-# Exntesive Documentation about Computer Vision
+# Extensive Documentation about Computer Vision
