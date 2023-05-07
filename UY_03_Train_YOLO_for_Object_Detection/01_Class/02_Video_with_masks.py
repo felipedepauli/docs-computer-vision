@@ -63,8 +63,7 @@ camera = cv2.VideoCapture(0)
 # Loop time! Catching frames and making magic happen
 while True:
     # Capture frame-by-frame from the camera
-    a, frame_BGR = camera.read()
-    print(a)
+    _, frame_BGR = camera.read()
 
     frame_HSV = cv2.cvtColor(frame_BGR, cv2.COLOR_BGR2HSV)
 
@@ -75,14 +74,6 @@ while True:
         mask = cv2.bitwise_or(mask1, mask2)
     else:
         mask = cv2.inRange(frame_HSV, color_bounds[color_name]["lower"], color_bounds[color_name]["upper"])
-
-    # # Convert the current frame to HSV color space
-    # frame_HSV = cv2.cvtColor(frame_BGR, cv2.COLOR_BGR2HSV)
-
-    # # Let's make a mask for our object using its color bounds in the HSV space
-    # mask = cv2.inRange(frame_HSV,
-    #                    (min_blue, min_green, min_red),
-    #                    (max_blue, max_green, max_red))
 
     # Show the frame with the mask applied
     cv2.namedWindow('Binary frame with Mask', cv2.WINDOW_NORMAL)
@@ -131,31 +122,26 @@ while True:
 cv2.destroyAllWindows()
 
 
-"""
-Some comments
+# A conversão da imagem para o espaço de cores HSV (Hue, Saturation, Value) é feita
+# porque é mais fácil e eficiente lidar com a detecção de cores no espaço HSV do que no espaço RGB (Red, Green, Blue).
 
-With OpenCV function cv2.findContours() we find 
-contours of white object from black background.
+# No espaço de cores HSV:
+# - Hue (Matiz): Representa a cor, variando de 0 a 180 (na maioria das implementações do OpenCV) ou de 0 a 360 (em outros sistemas).
+# - Saturation (Saturação): Representa a quantidade de cor (pureza), variando de 0 (sem cor) a 255 (cor pura).
+# - Value (Valor): Representa a luminosidade, variando de 0 (preto) a 255 (branco).
 
-There are three arguments in cv.findContours() function,
-first one is source image, second is contour retrieval mode,
-third is contour approximation method.
+# As principais vantagens de usar o espaço de cores HSV para detecção de cores são:
 
-In OpenCV version 3, the cv2.findContours() function returns three parameters:
-modified image, the contours, and hierarchy.
-Further reading about Contours in OpenCV v3:
-https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html
+# - A separação da cor (matiz) da luminosidade e saturação: No espaço HSV, a cor é representada apenas pelo componente Hue,
+#   tornando mais fácil isolar uma cor específica em diferentes condições de iluminação.
 
-In OpenCV version 4, the cv2.findContours() function returns two parameters:
-the contours and hierarchy.
-Further reading about Contours in OpenCV v4:
-https://docs.opencv.org/4.0.0/d4/d73/tutorial_py_contours_begin.html
+# - Maior robustez a variações de iluminação: O espaço de cores HSV é menos sensível a variações de iluminação do que o espaço RGB,
+#   o que é importante na detecção de cores, já que a iluminação pode variar significativamente em diferentes cenários.
 
-Contours is a Python list of all the contours in the image.
-Each individual contour is a Numpy array of (x, y) coordinates 
-of boundary points of the object.
+# - Menor complexidade computacional: Como a cor é representada apenas pelo componente Hue,
+#   você pode criar máscaras para detecção de cores usando apenas um intervalo de valores Hue,
+#   reduzindo a complexidade computacional em comparação com a detecção de cores no espaço RGB,
+#   que exigiria intervalos para os três componentes (R, G e B).
 
-Contours can be explained simply as a curve joining all the 
-continuous points (along the boundary), having the same color or intensity.
-"""
-
+# - Essas características tornam o espaço de cores HSV uma escolha popular e eficiente para detecção de cores
+#   em aplicações de processamento de imagem e visão computacional.
