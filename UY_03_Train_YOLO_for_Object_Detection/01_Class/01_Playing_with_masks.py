@@ -6,16 +6,20 @@
     @  SECTION
         Quick Win - Step 1: Simple Object Detection by thresholding with mask
         
+    @  FILES
+        - this
+        - objects-to-detect.jpg
+        
     @  PROCEDURE
         1. Read RGB image.
         2. Converting to HSV.
         3. Getting Mask for blue objects.
         
     @  PS
-        - This script was made using the Code Runner. The path
+        - The path
         to the image is relative to the root folder of the
-        repository. If you are using another IDE, you may
-        need to change the path to the image.
+        repository. You may
+        need to change the path depending on your developing environment.
 ---------------------------------
 '''
 

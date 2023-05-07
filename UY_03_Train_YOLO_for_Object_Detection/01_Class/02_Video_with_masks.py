@@ -1,34 +1,49 @@
-"""
-Course: Training YOLO v3 for Objects Detection with Custom Data
+'''
+---------------------------------
+    @  COURSE NAME
+        Course:  Training YOLO v3 for Objects Detection with Custom Data
 
-Section-1
-Quick Win - Step 2: Simple Object Detection by thresholding with mask
-File: detecting-object.py
-"""
+    @  SECTION
+        Quick Win - Step 2: Simple Object Detection by thresholding with mask
+
+    @  FILES
+        - this
+        - camera's frames
+
+    @  PROCEDURE
+        1. Set the threshold colors.
+        2. Read RGB image from camera.
+        3. Convert image to HSV color space.
+        4. Apply color mask to isolate the desired object.
+        5. Find contours of the masked object.
+        6. Extract bounding rectangle coordinates.
+        7. Draw a bounding box around the detected object.
+        8. Add a label to the detected object.
+
+---------------------------------
+'''
+
 
 
 # Who's ready for some object detection magic? Let's get started!
-# 
-# Algorithm:
-# Reading RGB image --> Converting to HSV --> Implementing Mask -->
-# --> Finding Contour Points --> Extracting Rectangle Coordinates -->
-# --> Drawing Bounding Box --> Putting Label
 #
-# Result:
+# Target:
 # Window with Detected Object, Bounding Box and Label in Real Time
 
 
-# Importing the magical library that makes all of this possible: OpenCV
+# Importing the magical libraries that makes all of this possible
 import cv2
 import numpy as np
 
+# 1. SET THE THRESHOLD COLORS.
+
 # Defining lower bounds and upper bounds of the mask for our mysterious object
-# Defining the color bounds
 color_bounds = {
     "blue": {
         "lower": np.array([100, 150, 0]),
         "upper": np.array([140, 255, 255])
     },
+    # The explanation of why this is this way at the bottom of the file
     "red": {
         "lower": np.array([0, 150, 50]),
         "upper": np.array([10, 255, 255]),
@@ -50,11 +65,13 @@ color_bounds = {
 }
 
 # Choose the color you want to detect by setting the color_name variable
-color_name = "red"
+color_name = "blue"
 
 # Time to find out which version of OpenCV we're using!
 # Split the version string by dots and grab the first part
 v = cv2.__version__.split('.')[0]
+
+# 2. READ RGB IMAGE FROM CAMERA.
 
 # Let's create an object for reading video from the camera
 camera = cv2.VideoCapture(0)
@@ -65,8 +82,12 @@ while True:
     # Capture frame-by-frame from the camera
     _, frame_BGR = camera.read()
 
+    # 3. CONVERT IMAGE TO HSV COLOR SPACE.
+
     frame_HSV = cv2.cvtColor(frame_BGR, cv2.COLOR_BGR2HSV)
 
+    # 4. APPLY COLOR MASK TO ISOLATE THE DESIRED OBJECT.
+    
     # Create the mask for the chosen color
     if color_name == "red":
         mask1 = cv2.inRange(frame_HSV, color_bounds[color_name]["lower"], color_bounds[color_name]["upper"])
@@ -79,7 +100,9 @@ while True:
     cv2.namedWindow('Binary frame with Mask', cv2.WINDOW_NORMAL)
     cv2.imshow('Binary frame with Mask', mask)
 
-    # Finding contours - the outline of our object
+    # 5. FIND CONTOURS OF THE MASKED OBJECT.
+    # the outline of our object
+    
     # Different OpenCV versions return different numbers of parameters
     # when using cv2.findContours()
 
@@ -97,6 +120,8 @@ while True:
     if contours:
         # Get the bounding rectangle around the largest contour
         (x_min, y_min, box_width, box_height) = cv2.boundingRect(contours[0])
+        cv2.drawContours(frame_BGR, contours, 0, (0, 255, 0), 3)
+
 
         # Draw the bounding box on the current BGR frame
         cv2.rectangle(frame_BGR, (x_min - 15, y_min - 15),
@@ -145,3 +170,14 @@ cv2.destroyAllWindows()
 
 # - Essas características tornam o espaço de cores HSV uma escolha popular e eficiente para detecção de cores
 #   em aplicações de processamento de imagem e visão computacional.
+
+# ------------------------------ RED COLOR --------------------------------
+# The red color has a peculiarity in the HSV color space that sets it apart from other colors. Red is found at the beginning and end of the hue spectrum, with values close to 0 and close to 180. This causes the hue value range for red to be split into two parts.
+
+# For this reason, the code defines two masks for the red color:
+
+# mask1 is created for the lower hue value range for red (0 to some lower value, in the given example, 10).
+# mask2 is created for the upper hue value range for red (some higher value, in the given example, 160, to 180).
+# Then, the two masks are combined using the bitwise OR operation (cv2.bitwise_or). This means that pixels that match either of the masks (i.e., are in the lower or upper red hue ranges) will be included in the final mask.
+
+# For other colors, such as green, blue, yellow, and pink, the hue ranges are continuous and not split into two parts, so just one mask is sufficient to capture the color.
