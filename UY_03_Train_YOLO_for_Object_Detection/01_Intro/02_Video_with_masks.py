@@ -65,7 +65,7 @@ color_bounds = {
 }
 
 # Choose the color you want to detect by setting the color_name variable
-color_name = "blue"
+color_name = "pink"
 
 # Time to find out which version of OpenCV we're using!
 # Split the version string by dots and grab the first part
@@ -120,7 +120,7 @@ while True:
     if contours:
         # Get the bounding rectangle around the largest contour
         (x_min, y_min, box_width, box_height) = cv2.boundingRect(contours[0])
-        cv2.drawContours(frame_BGR, contours, 0, (0, 255, 0), 3)
+        # cv2.drawContours(frame_BGR, contours, 0, (0, 255, 0), 3)
 
 
         # Draw the bounding box on the current BGR frame
