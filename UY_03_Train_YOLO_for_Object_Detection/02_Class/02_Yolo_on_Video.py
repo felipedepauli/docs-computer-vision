@@ -44,7 +44,7 @@ probability_minimum = 0.5
 threshold = 0.3
 
 # Generating randomly colours for representing every detected object
-colours = np.random.randint(0, 255, size=(len(labels), 3), dtype='uint8')
+colors = np.random.randint(0, 255, size=(len(labels), 3), dtype='uint8')
 
 f = 0   # Definig variable for counting frames
 t = 0   # Defining variable for counting total time
@@ -156,7 +156,7 @@ while True:
 
             # Preparing colour for current bounding box
             # and converting from numpy array to list
-            colour_box_current = colours[class_numbers[i]].tolist()
+            colour_box_current = colors[class_numbers[i]].tolist()
 
             # # # Check point
             # print(type(colour_box_current))  # <class 'list'>
