@@ -118,7 +118,7 @@ if len(results) > 0:
         # print(type(colour_box_current))  # <class 'list'>
         # print(colour_box_current)  # [172 , 10, 127]
 
-        # Drawing bounding box on the original image
+        # Drawing boun1ding box on the original image
         cv.rectangle(image_BGR, (x_min, y_min),
                       (x_min + box_width, y_min + box_height),
                       colour_box_current, 2)
