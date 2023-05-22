@@ -1,0 +1,26 @@
+<annotation>
+	<folder>02_ffmpeg</folder>
+	<filename>image-1.jpeg</filename>
+	<path>D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\image-1.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>motorbicycle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>719</xmin>
+			<ymin>310</ymin>
+			<xmax>744</xmax>
+			<ymax>358</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,14 @@
+Notebook
+Cat
+Plant
+Cup
+Bottle
+Coffee Bottle
+Pen
+Mouse
+Keyboard
+Monitor
+Rat
+Person
+Shoes
+Book

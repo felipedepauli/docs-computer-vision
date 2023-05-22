@@ -1,0 +1,2 @@
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-1.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-10.jpeg
