@@ -1,0 +1,5 @@
+classes = 2
+train = D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/train.txt
+valid = D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/test.txt
+names = D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/classes.names
+backup = backup

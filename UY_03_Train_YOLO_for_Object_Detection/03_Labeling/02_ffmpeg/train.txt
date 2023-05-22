@@ -1,0 +1,17 @@
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-11.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-12.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-13.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-14.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-15.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-16.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-17.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-18.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-19.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-2.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-3.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-4.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-5.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-6.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-7.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-8.jpeg
+D:\aincrivelfabrica\git\docs-computer-vision\UY_03_Train_YOLO_for_Object_Detection\03_Labeling\02_ffmpeg\labelled_images/image-9.jpeg
