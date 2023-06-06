@@ -27,7 +27,7 @@ framesIds = cap.get(cv2.CAP_PROP_FRAME_COUNT) * np.random.uniform(size=75)
 # With the Ids, we can get the frames
 frames = []
 for fid in framesIds:
-    cap.set(cv2.CAP_PROP_POS_FRAMES, fid) # Set the frame id (CAP_PROP_POS_FRAMES is a command)
+    cap.set(cv2.CAP_PROP_POS_FRAMES, fid) # Set the next frame id we're goingo to get (CAP_PROP_POS_FRAMES is the property)
     hasFrame, frame = cap.read()          # Read the frame
     frames.append(frame)                  # Append the frame to the list
 
