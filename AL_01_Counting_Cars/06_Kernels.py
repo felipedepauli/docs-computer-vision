@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import sys
-import csv
 
 video = "../common/media/videos/Ponte.mp4"
 
@@ -106,7 +105,6 @@ if __name__ == "__main__":
         mask_Filter_opening  = Filter(mask, 'opening')
         mask_Filter_combine  = Filter(mask, 'combine')
         
-
 
         cv2.imshow('Mask Filter Closing',  mask_Filter_closing)
         cv2.imshow('Mask Filter Opening',  mask_Filter_opening)
